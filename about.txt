@@ -1,0 +1,7 @@
+We are trying to approach price modelling using methods in signal processing, information theory, statistical modelling and finance.
+
+The project brewed as a continuation to our previous attempt to under stochastic process modelling of options. Spanning over a period of three days, the project concluded with the realisation of convergence of Monte Carlo simulations and the Black Scholes equation. After nearly a year to the project's conclusion and informal discussions around finance, investing and signal theory, we intend to formalise our discussions into a more organised and scientific repository for future reference. 
+
+We shall attempt to first model stock price before approaching financial instruments, while gaining literacy on the latter simultaneously. The repository shall also contain our notes on the same for future reference. 
+
+-efforts of sachit and sankalp
