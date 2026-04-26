@@ -1,0 +1,127 @@
+Feature variations used in the notebook
+
+short: rolling windows of 5, 10, and 20 trading days
+medium: rolling window of 60 trading days
+long: rolling windows of 120 and 252 trading days
+spot: current-day or non-rolling version
+anchor252: spread versus the 252-day moving average anchor
+robust: rolling median/IQR scaled version of the same feature
+
+Feature descriptions
+
+returns_mean (short, medium, long, robust)
+Rolling average of daily log returns, capturing the local drift of the market over each horizon.
+
+returns_cumulative (short, medium, long, robust)
+Rolling sum of daily log returns, measuring total log performance over the window.
+
+drawdown_current (short, medium, long, robust)
+Current log-price drawdown from the rolling peak, showing how far the market sits below its recent high.
+
+drawdown_max (short, medium, long, robust)
+Worst drawdown observed within the rolling window, measuring peak-to-trough stress severity.
+
+volatility_std (short, medium, long, robust)
+Rolling standard deviation of daily log returns, used as realized volatility.
+
+volatility_variance (short, medium, long, robust)
+Rolling variance of daily log returns, emphasizing high-volatility episodes more strongly than standard deviation.
+
+volatility_of_vol (short, medium, long, robust)
+Rolling standard deviation of realized volatility, capturing instability in the volatility process itself.
+
+volatility_sqret_autocorr1 (short, medium, long, robust)
+Lag-1 autocorrelation of squared returns, measuring volatility clustering and persistence.
+
+volatility_absret_mean (short, medium, long, robust)
+Rolling mean of absolute returns, a robust proxy for market turbulence.
+
+vix_level (spot, robust)
+Current VIX level, representing contemporaneous implied market fear.
+
+vix_returns (spot, robust)
+Daily log return of the VIX, capturing changes in implied volatility expectations.
+
+vix_mean (short, medium, long, robust)
+Rolling average of the VIX level, summarizing sustained implied-volatility conditions.
+
+vix_std (short, medium, long, robust)
+Rolling standard deviation of the VIX level, measuring instability in implied volatility.
+
+vix_to_realizedvol (short, medium, long, robust)
+Ratio of VIX level to realized volatility, comparing implied risk pricing with recent realized risk.
+
+distribution_skew (short, medium, long, robust)
+Rolling skewness of returns, describing asymmetry between upside and downside moves.
+
+distribution_kurtosis (short, medium, long, robust)
+Rolling kurtosis of returns, measuring tail thickness and the prevalence of extreme moves.
+
+distribution_downside_semivariance (short, medium, long, robust)
+Rolling mean squared negative returns, isolating downside volatility.
+
+distribution_upside_semivariance (short, medium, long, robust)
+Rolling mean squared positive returns, isolating upside volatility.
+
+distribution_tail_ratio (short, medium, long, robust)
+Ratio of the rolling 95th percentile return to the rolling 5th percentile return, summarizing tail balance and asymmetry.
+
+momentum_cumulative (short, medium, long, robust)
+Rolling cumulative log return used as a momentum signal over each horizon.
+
+trend_slope (short, medium, long, robust)
+Linear regression slope of log price within the window, capturing directional trend strength.
+
+sharpe_rolling (short, medium, long, robust)
+Rolling mean return divided by rolling return volatility, summarizing risk-adjusted trend quality.
+
+price_to_ma (short, medium, long, robust)
+Distance between price and its rolling moving average, indicating overextension or weakness relative to trend.
+
+ma_spread (short, medium, anchor252, robust)
+Difference between a shorter moving average and the 252-day moving average, measuring short-versus-long trend separation.
+
+liquidity_volume_mean (short, medium, long, robust)
+Rolling average trading volume, representing background market activity and depth.
+
+liquidity_volume_shock (short, medium, long, robust)
+Ratio of current volume to its rolling mean, highlighting unusual trading surges or droughts.
+
+liquidity_amihud (short, medium, long, robust)
+Rolling average of the Amihud illiquidity measure, defined from absolute return per unit of volume.
+
+liquidity_absret_to_volume (short, medium, long, robust)
+Ratio of cumulative absolute return to cumulative volume, capturing price impact relative to trading activity.
+
+breadth_positive_days_pct (short, medium, long, robust)
+Fraction of days with positive returns inside the window, acting as a market breadth proxy from the index itself.
+
+breadth_up_down_ratio (short, medium, long, robust)
+Ratio of up days to down days in the window, measuring directional participation balance.
+
+tail_var (short, medium, long, robust)
+Rolling 5 percent Value at Risk from historical returns, estimating typical downside threshold under stress.
+
+tail_expected_shortfall (short, medium, long, robust)
+Rolling average return beyond the 5 percent VaR cutoff, measuring expected loss in the tail.
+
+tail_max_abs_return (short, medium, long, robust)
+Largest absolute daily return within the window, capturing the strongest shock realized recently.
+
+tail_extreme_count (short, medium, long, robust)
+Count of days where absolute return exceeds two times rolling volatility, measuring the frequency of outsized moves.
+
+correlation_return_vix (short, medium, long, robust)
+Rolling correlation between equity returns and VIX returns, reflecting the return-risk sentiment linkage.
+
+correlation_return_vol (short, medium, long, robust)
+Rolling correlation between returns and realized volatility, describing how performance co-moves with market turbulence.
+
+correlation_leverage_effect (short, medium, long, robust)
+Rolling correlation between returns and changes in realized volatility, capturing the leverage-effect style downside-volatility relationship.
+
+shock_absret_gt_2p5std (short, medium, long, robust)
+Binary indicator for days when absolute return exceeds 2.5 times rolling volatility, flagging abrupt market shocks.
+
+shock_vol_spike (short, medium, long, robust)
+Binary indicator for days when realized volatility exceeds its rolling 90th percentile, flagging volatility spike regimes.
