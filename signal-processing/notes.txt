@@ -1,0 +1,66 @@
+Signal processing techniques on financial instruments.
+
+Objective: to apply signal processing techniques on financial instruments.
+
+What is financial instruments?
+Financial instruments are contracts or documents that represent a financial value or ownership. They are used in financial markets for investing, borrowing, lending, or managing risk.
+
+What are signals?
+A signal is something that carries information so it can be received, understood, or acted upon.
+
+Can financial instruments be treated as signals?
+No. But their charts, or how the values changes over time can be treated as a signal.
+The asset underlying the instrument hold an intrinsic value(based on earnings, assets, growth, etc.) and not a signal itself but generate signals through its behavior. 
+
+Stock = object (instrument with value)
+Signal = information extracted from that object
+
+What are the fundamental (core) signals a stock inherently produces?
+1. Price (value signal): Current market value
+2. Volume (participation signal): Strength of participation
+3. Time (structure signal): When movements happen
+4. Order flow / liquidity (microstructure signal): Buy vs sell pressure, Supply and demand imbalance, Presence of large players.
+
+What can be interpreted from these signals?
+1. Price: Compressed information about things known or believed about the stock. No intrinsic value. It reflects Expectations, Emotions, News. 
+   Price is a signal about perception.
+2. Volume: How many people agree with this price? No intrinsic value. Volume is a **signal of activity**, not value.
+3. Time: No intrinsic value. Just the dimension over which things happen. Time is a framework.
+4. Order Flow: No intrinsic value. Order flow is a signal of intent, not true worth.
+
+Intrinsic value means something has worth by its very nature not because of what it leads to.
+
+Can these signals be wrong? If yes then the signal processing on these would mean anything? What is meant by signals being wrong as? Since these signal lack intrinsic value these are interpretation of the markets. What if these interpretations are overpriced/underpriced?
+Signals are imperfect observations of a complex system. These are
+Noisy → random fluctuations
+Incomplete → not all information is visible
+Lagging → reflect past actions
+Context-dependent → same pattern, different outcomes
+Hypothesis, the stock is fairly price over a long time. 
+
+What if the there was a sudden increase in some indicators which are justified by the actions of these assets, will signal processing treat them as noise?
+
+Since looking at the historic data without any method or any other techniques, i can just see where should i buy and where should i sell just by looking at the price data. Then why apply these methods? Because:
+STEPS:
+1. Determine the underlying pattern in the data using these methods
+2. Implement strategies using those patterns if they repeat.
+
+Objective:
+Compare the trading strategies if you went long on stock vs when you used these patterns to build your position.
+
+Approach:
+1. Collect raw data
+2. Apply signal processing methods to them. Creates Processed signals.
+3. Define trading strategies(When to enter, When to exit). E.g. Buy when signal > threshold
+4. Split the data(training and testing)
+5. Training (optimize your strategy): Find a configuration that works reasonably well.
+   Try different parameters
+   Adjust thresholds
+   Tune signal processing
+   E.g. Moving average = 10 vs 20 vs 50.
+6. Freeze the strategy
+7. Testing (out-of-sample evaluation): Run the strategy on unseen data
+8. Evaluate performance
+9. Interpret results: Works well, Slightly worse but acceptable, Collapses completely
+10. Walk-forward / iterative refinement
+
